@@ -2,6 +2,7 @@ const cheerio = require("cheerio");
 const express = require("express");
 const fetch = require("node-fetch");
 const slugify = require("slugify");
+const cors = require("cors");
 
 API_URI_1 = "https://www.hurriyet.com.tr/mahmure/astroloji/{0}-burcu/" //burada günlük yorumları
 API_URI_2 = "https://www.hurriyet.com.tr/mahmure/astroloji/{0}-burcu-{1}-yorum/" // burada get değerine göre burcun haftalık,aylık,yıllık yorumunu alacağız
