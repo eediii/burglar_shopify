@@ -22,9 +22,12 @@ app.get("/get/:burc", async (req, res) => {
         .then(response => response.text())
         .then(body => {
             const $ = cheerio.load(body);
-            const motto = $('body > div.main-wrapper > div:nth-child(2) > div > div > div.region-type-1.col-12 > div.row.mb20 > div > div > div.horoscope-menu-detail > ul > li:nth-child(1)').text.split(":  ")[1];
-            const gezegen = $('body > div.main-wrapper > div:nth-child(2) > div > div > div.region-type-1.col-12 > div.row.mb20 > div > div > div.horoscope-menu-detail > ul > li:nth-child(2)').text.split(":  ")[1];
-            const element = $('body > div.main-wrapper > div:nth-child(2) > div > div > div.region-type-1.col-12 > div.row.mb20 > div > div > div.horoscope-menu-detail > ul > li:nth-child(3)').text.split(":  ")[1];
+            const MottoText = $('body > div.main-wrapper > div:nth-child(2) > div > div > div.region-type-1.col-12 > div.row.mb20 > div > div > div.horoscope-menu-detail > ul > li:nth-child(1)').text();
+            const motto = MottoText.split(":  ")[1];
+            const GezegenText = $('body > div.main-wrapper > div:nth-child(2) > div > div > div.region-type-1.col-12 > div.row.mb20 > div > div > div.horoscope-menu-detail > ul > li:nth-child(2)').text();
+            const gezegen = GezegenText.split(":  ")[1];
+            const ElementText = $('body > div.main-wrapper > div:nth-child(2) > div > div > div.region-type-1.col-12 > div.row.mb20 > div > div > div.horoscope-menu-detail > ul > li:nth-child(3)').text();
+            const element = ElementText.split(":  ")[1];
             const yorum = $('body > div.main-wrapper > div:nth-child(2) > div > div > div.region-type-2.col-lg-8.col-md-12 > div > div.horoscope-detail-tab > div.horoscope-detail-content > div > p:nth-child(2)').text();
             
             if (motto && gezegen && element && yorum) {
@@ -60,9 +63,12 @@ app.get("/get/:burc/:zaman", async (req, res) => {
         .then(response => response.text())
         .then(body => {
             const $ = cheerio.load(body);
-            const motto = $('body > div.main-wrapper > div:nth-child(2) > div > div > div.region-type-1.col-12 > div.row.mb20 > div > div > div.horoscope-menu-detail > ul > li:nth-child(1)').text.split(":  ")[1];
-            const gezegen = $('body > div.main-wrapper > div:nth-child(2) > div > div > div.region-type-1.col-12 > div.row.mb20 > div > div > div.horoscope-menu-detail > ul > li:nth-child(2)').text.split(":  ")[1];
-            const element = $('body > div.main-wrapper > div:nth-child(2) > div > div > div.region-type-1.col-12 > div.row.mb20 > div > div > div.horoscope-menu-detail > ul > li:nth-child(3)').text.split(":  ")[1];
+            const MottoText = $('body > div.main-wrapper > div:nth-child(2) > div > div > div.region-type-1.col-12 > div.row.mb20 > div > div > div.horoscope-menu-detail > ul > li:nth-child(1)').text();
+            const motto = MottoText.split(":  ")[1];
+            const GezegenText = $('body > div.main-wrapper > div:nth-child(2) > div > div > div.region-type-1.col-12 > div.row.mb20 > div > div > div.horoscope-menu-detail > ul > li:nth-child(2)').text();
+            const gezegen = GezegenText.split(":  ")[1];
+            const ElementText = $('body > div.main-wrapper > div:nth-child(2) > div > div > div.region-type-1.col-12 > div.row.mb20 > div > div > div.horoscope-menu-detail > ul > li:nth-child(3)').text();
+            const element = ElementText.split(":  ")[1];
             const yorum = $('body > div.page-wrapper.news-detail-page.Article > section.news-detail-content > div.container > div:nth-child(5) > div.col-xl-17.col-lg-16.news-left-content > div.news-content.readingTime > p').text();
             
             if (motto && gezegen && element && yorum) {
