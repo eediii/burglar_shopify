@@ -1,4 +1,4 @@
-<h3>Benimki kendi düzeltmelerim ve geliştirmelerimle yaptığım bir API'dır. Orijinale https://github.com/codescaptain/burc-yorumlari buradan ulaşabilirsiniz.</h3>
+<h3>Benimki kendi düzeltmelerim ve geliştirmelerimle yaptığım bir API'dır. Orijinale <a href="https://github.com/codescaptain/burc-yorumlari">buradan</a> ulaşabilirsiniz.</h3>
 Not: Aslan burcu olduğum için örnekler aslan burcu üzerindendir.<br>
 Örnek Zamana göre Api get değerleri:<br>
 Günlük Burç Yorumu: <a href="https://burglar-shopify.vercel.app/get/aslan/">https://burglar-shopify.vercel.app/get/aslan/</a><br>
