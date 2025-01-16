@@ -107,17 +107,29 @@ app.get("/gets/:burc/:ozellik", async (req, res) => {
         .then(body => {
             let $ = cheerio.load(body);
             let baslik = $('body > div.page-wrapper.news-detail-page.Article > section.news-detail-content > div.container > div:nth-child(5) > div.col-xl-17.col-lg-16.news-left-content > div.news-content__inf > h2').text();
-            let yorum;
+            
+            let yorum = "";
             if (ozellik === "unluler") {
-                yorum = $('body > div.page-wrapper.news-detail-page.Article.o-visible > section.news-detail-content > div.container > div:nth-child(5) > div.col-xl-17.col-lg-16.news-left-content > div.news-content.readingTime').find('ul').first().each((i, el) => {
+                let guidelines = [];
+                // İlk yaklaşım: Tüm `li` elementlerini gez
+                $('.md ul li').each((idx, el) => {
                     const guideline = $(el).text();
-                    yorum.push(guideline);
-                  });
+                    guidelines.push(guideline);
+                });
+                
+                // İkinci yaklaşım: İlk `ul` içindeki `li` elemanlarını gez
+                $('.md').find('ul').first().find('li').each((i, el) => {
+                    const guideline = $(el).text();
+                    guidelines.push(guideline);
+                });
+
+                // Sonuçları birleştir
+                yorum = guidelines.join("\n");
             } else {
                 yorum = $('body > div.page-wrapper.news-detail-page.Article > section.news-detail-content > div.container > div:nth-child(5) > div.col-xl-17.col-lg-16.news-left-content > div.news-content.readingTime > p').text();
             }
-            
-            if (baslik) {
+
+            if (baslik && yorum) {
                 datas.push({
                     Burc: burc.charAt(0).toUpperCase() + burc.slice(1),
                     Ozellik: ozellik.charAt(0).toUpperCase() + ozellik.slice(1),
@@ -130,12 +142,14 @@ app.get("/gets/:burc/:ozellik", async (req, res) => {
             console.error("Hata oluştu:", error);
             res.status(500).send({ error: "Veri çekilirken hata oluştu." });
         });
+
     if (datas.length === 0) {
         res.status(404).send({ error: "Veri bulunamadı." });
     } else {
         res.send(datas);
     }
 });
+
 
 let port = process.env.PORT || 5000;
 app.listen(port, () => {
