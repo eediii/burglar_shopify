@@ -1,22 +1,13 @@
-<h1 id="burc-yorumlari">burc-yorumlari</h1>
-<p>Burc yorumları ve bu burcların 17 farklı etiket ile özellikleri. Aşk,kariyer vb…</p>
-<p>Herkese Merhaba👋<br>
-Burç yorumları için oluşturulmuş bir sürü api olduğunu sizlerde biliyorsunuz. Ama ben biraz daha eğlenceli bir api olsun istedim. (türkçe karakterli get değerleri verebilirsiniz.)<br>
-〰️<br>
-Burç Api Özellikleri: 👇<br>
-1-)Günlük, haftalık, aylık ve yıllık olarak burc yorumları<br>
-2-)Burçların gezegenleri, mottoları ve elementi<br>
-3-)17 Farklı etiket ile aşk, kariyer vb. gibi yorumlar<br>
-〰️<br>
-Not: Aslan burcu olduğum için örnekler aslan burcu üzerindendir. 😀<br>
+<h3>Benimki kendi düzeltmelerim ve geliştirmelerimle yaptığım bir API'dır. Orijinale https://github.com/codescaptain/burc-yorumlari buradan ulaşabilirsiniz.</h3>
+Not: Aslan burcu olduğum için örnekler aslan burcu üzerindendir.<br>
 Örnek Zamana göre Api get değerleri:<br>
-Günlük Burç Yorumu: <a href="https://burc-yorumlari.vercel.app/get/aslan">https://burc-yorumlari.vercel.app/get/aslan</a><br>
-Haftalık Burç Yorumu: <a href="https://burc-yorumlari.vercel.app/get/aslan/haftalik">https://burc-yorumlari.vercel.app/get/aslan/haftalik</a><br>
-Aylık Burç Yorumu: <a href="https://burc-yorumlari.vercel.app/get/aslan/aylik">https://burc-yorumlari.vercel.app/get/aslan/aylik</a><br>
-Yıllık Burç Yorumu: <a href="https://burc-yorumlari.vercel.app/get/aslan/yillik">https://burc-yorumlari.vercel.app/get/aslan/yillik</a><br>
+Günlük Burç Yorumu: <a href="https://burglar-shopify.vercel.app/get/aslan/">https://burglar-shopify.vercel.app/get/aslan/</a><br>
+Haftalık Burç Yorumu: <a href="https://burglar-shopify.vercel.app/get/aslan/haftalik">https://burglar-shopify.vercel.app/get/aslan/haftalik</a><br>
+Aylık için aylik, yıllık için de yillik olarak yaptım.
 〰️<br>
 Örnek Etikete göre Api get değerleri:<br>
-Aşk Etiketi : <a href="https://burc-yorumlari.vercel.app/gets/aslan/ask">https://burc-yorumlari.vercel.app/gets/aslan/ask</a><br>
-Kariyer Etiketi : <a href="https://burc-yorumlari.vercel.app/gets/aslan/kariyer">https://burc-yorumlari.vercel.app/gets/aslan/kariyer</a></p>
-<p>Etiketler : AŞK,KARİYER,OLUMLU YONLER,SAĞLIK,STİL,ÜNLÜLER,DİYET,ZIT BURÇLARI,EĞLENCE HAYATİ, MAKYAJ, SAÇ STİLİ, ŞİFALI BİTKİLER, FİLM ÖNERİLERİ, ÇOCUKLUĞU, KADINI, ERKEĞİ</p>
-<p>Geliştirmeye devam edeceğim.</p>
+Aşk Etiketi : <a href="https://burglar-shopify.vercel.app/gets/aslan/ask">https://burglar-shopify.vercel.app/gets/aslan/ask</a><br>
+Kariyer Etiketi : <a href="https://burglar-shopify.vercel.app/gets/aslan/kariyer">https://burglar-shopify.vercel.app/gets/aslan/kariyer</a></p>
+<p>Etiketler : ask, kariyer, olumlu-yonler, olumsuz-yonler, saglik, unluler, zit-burclari, eglence-hayati(daha da vardı da benim için bunlar yeterli olduğu için bu kadarını ekledim, farklı etiketlerde içerikler de farklı olduğundan çok uğraşmak istemedim)</p>
+<p>Kendiniz de kodda değişim yapabilirsiniz, yani vercellde kendi deploymentınızı oluşturarak bedava api kurabilirsiniz.</p>
+Teşekkürler <a href="https://github.com/codescaptain">CodesCaptain</a>
