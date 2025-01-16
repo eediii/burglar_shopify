@@ -107,21 +107,19 @@ app.get("/gets/:burc/:ozellik", async (req, res) => {
         .then(body => {
             let $ = cheerio.load(body);
             let baslik = $('body > div.page-wrapper.news-detail-page.Article > section.news-detail-content > div.container > div:nth-child(5) > div.col-xl-17.col-lg-16.news-left-content > div.news-content__inf > h2').text();
+            let yorum;
             if (ozellik === "unluler") {
-                let YorumListe = [];
+                let guidelines = [];
                 $('body > div.page-wrapper.news-detail-page.Article > section.news-detail-content > div.container > div:nth-child(5) > div.col-xl-17.col-lg-16.news-left-content > div.news-content.readingTime > ul > li').each((idx, el) => {
                     const guideline = $(el).text();
-                    YorumListe.push(guideline);
+                    guidelines.push(guideline);
                 });
-                datas.push({
-                    Burc: burc.charAt(0).toUpperCase() + burc.slice(1),
-                    Ozellik: ozellik.charAt(0).toUpperCase() + ozellik.slice(1),
-                    Baslik: baslik.trim(),
-                    YorumListe: YorumListe,
-                });
-                // yorum = guidelines.join("\n");
+                yorum = guidelines.join("\n");
             } else {
-                let yorum = $('body > div.page-wrapper.news-detail-page.Article > section.news-detail-content > div.container > div:nth-child(5) > div.col-xl-17.col-lg-16.news-left-content > div.news-content.readingTime > p').text();
+                yorum = $('body > div.page-wrapper.news-detail-page.Article > section.news-detail-content > div.container > div:nth-child(5) > div.col-xl-17.col-lg-16.news-left-content > div.news-content.readingTime > p').text();
+            }
+            
+            if (baslik) {
                 datas.push({
                     Burc: burc.charAt(0).toUpperCase() + burc.slice(1),
                     Ozellik: ozellik.charAt(0).toUpperCase() + ozellik.slice(1),
@@ -129,15 +127,6 @@ app.get("/gets/:burc/:ozellik", async (req, res) => {
                     Yorum: yorum.trim(),
                 });
             }
-            
-            // if (baslik) {
-            //     datas.push({
-            //         Burc: burc.charAt(0).toUpperCase() + burc.slice(1),
-            //         Ozellik: ozellik.charAt(0).toUpperCase() + ozellik.slice(1),
-            //         Baslik: baslik.trim(),
-            //         Yorum: yorum.trim(),
-            //     });
-            // }
         })
         .catch(error => {
             console.error("Hata oluştu:", error);
