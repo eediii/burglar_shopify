@@ -10,7 +10,7 @@ API_URI_3 = "https://www.hurriyet.com.tr/mahmure/astroloji/burclar/{0}-burcu/{1}
 // gelecek degerler => AŞK,KARİYER,OLUMLU YONLER,SAĞLIK,STİL,ÜNLÜLER,DİYET,ZIT BURÇLARI,EĞLENCE HAYATİ, MAKYAJ, SAÇ STİLİ, ŞİFALI BİTKİLER, FİLM ÖNERİLERİ, ÇOCUKLUĞU, KADINI, ERKEĞİ
 
 let app = express();
-app.use(cors({ origin: 'https://4c5ca1-54.myshopify.com' }));
+app.use(cors({ origin: '*' }));
 
 //Gunluk /get/burc
 
