@@ -109,10 +109,10 @@ app.get("/gets/:burc/:ozellik", async (req, res) => {
             let baslik = $('body > div.page-wrapper.news-detail-page.Article > section.news-detail-content > div.container > div:nth-child(5) > div.col-xl-17.col-lg-16.news-left-content > div.news-content__inf > h2').text();
             let yorum = "";
             if (ozellik === "unluler") {
-                let guidelines = [];
+                let yorum = [];
                 $('body > div.page-wrapper.news-detail-page.Article > section.news-detail-content > div.container > div:nth-child(5) > div.col-xl-17.col-lg-16.news-left-content > div.news-content.readingTime > ul > li').each((idx, el) => {
                     const guideline = $(el).text();
-                    guidelines.push(guideline);
+                    yorum.push(guideline);
                 });
             } else {
                 yorum = $('body > div.page-wrapper.news-detail-page.Article > section.news-detail-content > div.container > div:nth-child(5) > div.col-xl-17.col-lg-16.news-left-content > div.news-content.readingTime > p').text();
